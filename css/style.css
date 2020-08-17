@@ -1,0 +1,398 @@
+:root {
+    --hed: #00ffff;
+    --bg_block: #00000048;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkid-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #64646485;
+    box-shadow: 0 0 2px rgba(0, 0, 0,1) inset;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00ffff;
+    border: 1px solid #000;
+    border-radius: 6px;
+}
+
+body {
+    height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+    color: var(--hed);
+    text-transform: uppercase;
+    text-shadow: 0 0 1px #000;
+    padding: 5vh 0;
+}
+
+.wrapper {
+    background: url(../img/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+    #menu {
+        display: none;
+    }
+
+        #menu:checked ~ .menu {
+            left: 0;
+        }
+
+        #menu:checked ~ .info {
+            padding-left: 20vw;
+        }
+
+    label {
+        position: absolute;
+        top: 2vh;
+        right: 2vw;
+        width: 3.5vw;
+        height: 5.8vh;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    label::after {
+        content: 'menu';
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        letter-spacing: 3px;
+        color: var(--hed);
+        text-shadow: rgba(0, 0, 0, .5);
+        position: absolute;
+        width: 3.5;
+        height: 1vh;
+        left: 0;
+        right: 0;
+        bottom: -1vh;
+    }
+
+        label span {
+            background: var(--hed);
+            border-radius: 3px;
+            transition: all 2s;
+            display: block;
+            width: 2.5vw;
+            height: .6vh;
+            position: absolute;
+        }
+
+        label span:nth-child(1) {
+            content: '';
+            top: 1vh;
+            left: .5vw;
+        }
+
+            #menu:checked ~ label span:nth-child(1) {
+                transform: translate(0, 1.6vh) rotate(45deg);
+            }
+
+        label span:nth-child(2) {
+            content: '';
+            top: 2.6vh;
+            left: .5vw;
+        }
+    
+            #menu:checked ~ label span:nth-child(2) {
+                    transform: rotateY(90deg);
+            }
+
+        label span:nth-child(3) {
+            content: '';
+            top: 4.2vh;
+            left: .5vw;
+        }
+    
+            #menu:checked ~ label span:nth-child(3) {
+                    transform: translate(0, -1.6vh) rotate(-45deg);
+            }
+    
+    .menu {
+     background: rgba(0, 0, 0, .3);
+     width: 20vw;
+     height: 100vh;
+     position: fixed;
+     top: 0;
+     left: -20vw;
+     overflow-y: auto;
+     overflow-x: hidden;
+     color: #ffffff;
+     transition: all 2s;
+    }
+
+        .menu_ava {
+            width: 20vw;
+            height: 15vh;
+        }
+        
+        .menu_name {
+            width: 20vw;
+            height: 10vh;
+            text-align: right;
+            padding-right: 2vw;
+        }
+
+            .menu li {
+                font-size: 20px;
+                list-style: none;
+                text-align: center;
+                line-height: 60px;
+                border-left: 5px solid transparent;
+                margin-bottom: 10px;
+            }
+
+            .menu li:hover {
+                border-left: 5px solid aqua;
+                transform: all 1s;
+            }
+
+                .menu li a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: #ffffff;
+                    transition: all 2s;
+                }
+
+                .menu li a:hover {
+                    color: aqua;
+                    letter-spacing: 3px;
+                }
+
+    .info {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 2s;
+    scroll-behavior: smooth;
+    }
+
+        .about_me {
+            min-height: 100vh;
+            padding: 5%;
+        }
+
+            code {
+                color: #ffffff;
+                font-size: 20px;
+            }
+
+            code span {
+                color: aqua;
+                font-size: 30px;
+            }
+
+            .code_span{
+                font-size: 25px;
+            }
+
+            .ityped-cursor {
+                font-size: 2rem;
+                opacity: 1;
+                -webkit-animation: blink 0.3s infinite;
+                -moz-animation: blink 0.3s infinite;
+                animation: blink 0.3s infinite;
+                animation-direction: alternate;
+            }
+
+        .competency {
+            background-color: var(--bg_block);
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .create {
+            background-color: transparent;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .create button {
+            background-color: var(--hed);
+            border-radius: 5px;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            padding: 10px 15px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+            .create_lp,
+            .create_site,
+            .create_mag,
+            .create_webPr
+             {
+                background-color: var(--bg_block);
+                box-sizing: border-box;
+                border-radius: 5px;
+                display: inline-block;
+                width: 15vw;
+                min-height: 40vh;
+                margin: 5vh 12vw;
+                padding: 10px;
+                position: relative;
+                
+            }
+
+                .create h3 {
+                    color: var(--hed);
+                }
+
+                .create p {
+                    color: #ffffff;
+                }
+
+        .services {
+            background-color: var(--bg_block);
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .contacts {
+            background-color: #ffffffde;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+            .contaner {
+                display: flex;
+                flex-wrap:wrap;
+            }
+
+         
+
+            .contacts_link {
+                flex: 0 1 50%;
+            }
+
+                .vk-button {
+                    box-sizing: content-box;
+                    width: 10rem;
+                    height: 2.1rem;
+                    padding: 0.375rem 0.375rem 0;
+                    background: #eee;
+                    border-radius: 0.25rem;
+                    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+                    perspective: 30rem;
+                    font-size: 16px;
+                    flex: 0 1 10rem;
+                    margin: 10%;
+                }
+
+                    .vk-button a {
+                        font-family: 'Noto Sans JP', sans-serif;
+                        position: relative;
+                        top: 5px;
+                        text-decoration: none;
+                        color: #4A76A8;
+                    }
+                    
+                    .cover, .cover > * {
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    
+                    .cover {
+                        transform-origin: center bottom;
+                        transform-style: preserve-3d;
+                        text-align: center;
+                        z-index: 99;
+                    }
+                    
+                        .cover svg {
+                            width: 40px;
+                            height: 40px;
+                            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+                        }
+                    
+                        .inner {
+                            background-color: #87CEFA;
+                        }
+                        
+                        .outer {
+                            background-color: #5494d8;
+                            transform:translateZ(0.25rem);
+                        }
+                        
+                        .inner,.outer {
+                            border-radius: 0.25rem;
+                            background-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
+                        }
+                        
+                        .edge {
+                            background-color: #4A76A8;
+                            top:0.25rem;
+                            height:0.25rem;
+                            transform:rotateX(90deg);
+                            transform-origin: center top;
+                        }
+                    
+                        .vk-button:hover .cover {
+                            transform:rotateX(-120deg);
+                        }
+                        
+                        .vk-button, .vk-button div {
+                            transition-duration: 0.7s;
+                            transition-timing-function: ease;
+                        }
+                        
+                        .vk-button:hover .shadow {
+                            transform: rotateX(45deg) scale(0.95);
+                            opacity: 1;
+                        }
+                        
+                    .shadow {
+                        position: absolute;
+                        top:100%;
+                        left:0;
+                        width:100%;
+                        height:3.2rem;
+                        border-radius: 0.5rem;
+                        background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 100%);
+                        transform:rotateX(90deg);
+                        transform-origin: center top;
+                        opacity: 0;
+                    }
+
+            .contacts_form {
+                flex: 0 1 50%;
+            }
+
+        footer {
+            min-height: 5vh;
+            text-align: center;
+            color: cyan;
+            padding: 1vh 0;
+        }
